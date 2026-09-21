@@ -52,14 +52,14 @@ export const EDUCATION = [
   {
     years: '2015 – 2019',
     title: 'Secondary Education · SEE',
-    org: 'Sinha Public School',
+    org: 'Model Multiple College',
     meta: 'Grade X · Mathematics & Science',
     grade: '3.65 / 4.0',
   },
   {
     years: '2020 – 2022',
     title: 'Senior Secondary · Science',
-    org: 'Sinha Public School',
+    org: 'Model Multiple College',
     meta: 'Grade XII · Physical Sciences',
     grade: '3.08 / 4.0',
   },
