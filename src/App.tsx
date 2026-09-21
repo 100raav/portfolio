@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { PROFILE } from './data'
 import { useTheme } from './theme'
-import { Preloader } from './Preloader'
 import Cinematic from './Cinematic'
 import Nav from './Nav'
 import Hero from './Hero'
@@ -14,24 +13,20 @@ import Contact from './Contact'
 
 export default function App() {
   const { theme, toggle } = useTheme()
-  const [booted, setBooted] = useState(false)
   const [cinema, setCinema] = useState(false)
   const [cinemaLeaving, setCinemaLeaving] = useState(false)
 
   useEffect(() => {
-    const t1 = setTimeout(() => setBooted(true), 1150)
-    const t2 = setTimeout(() => setCinema(true), 1350)
-    const t3 = setTimeout(() => setCinemaLeaving(true), 4300)
+    const t1 = setTimeout(() => setCinema(true), 60)
+    const t2 = setTimeout(() => setCinemaLeaving(true), 3900)
     return () => {
       clearTimeout(t1)
       clearTimeout(t2)
-      clearTimeout(t3)
     }
   }, [])
 
   return (
     <>
-      <Preloader done={booted} />
       <Cinematic show={cinema} leaving={cinemaLeaving} />
       <div className="grain" aria-hidden />
       <div className="vignette" aria-hidden />
