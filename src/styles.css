@@ -348,6 +348,19 @@ a {
   align-items: center;
   gap: 10px;
 }
+.nav-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid var(--stroke2);
+  box-shadow: 0 0 0 3px var(--chip-bg);
+  transition: box-shadow 0.25s, border-color 0.25s, transform 0.25s;
+}
+.nav-brand:hover .nav-avatar {
+  border-color: var(--accent);
+  box-shadow: 0 0 14px var(--glow-a), 0 0 0 3px var(--chip-bg);
+  transform: scale(1.05);
+}
 .nav-name {
   font-weight: 800;
   font-size: 1.05rem;
@@ -1150,40 +1163,53 @@ a {
 }
 .radar-wrap {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 .radar {
   width: 100%;
-  max-width: 520px;
+  max-width: 540px;
   height: auto;
+  filter: drop-shadow(0 18px 42px rgba(2, 6, 23, 0.35));
 }
-.radar-ring,
-.radar-axes {
-  fill: none;
+.radar-web .radar-ring {
+  fill: var(--accent);
   stroke: var(--stroke2);
   stroke-width: 1;
 }
-.radar-axes {
-  stroke-dasharray: 2 6;
-  stroke: var(--stroke);
+.radar-spokes line {
+  stroke: var(--stroke2);
+  stroke-width: 1.1;
+  opacity: 0.85;
+}
+.radar-ticks circle {
+  fill: var(--dim);
+  opacity: 0.7;
+}
+.radar-hub {
+  fill: var(--accent);
+  stroke: var(--bg);
+  stroke-width: 2.4;
+  box-shadow: 0 0 12px var(--glow-a);
 }
 .radar-blob {
   opacity: 0;
-  transform: scale(0.2);
+  transform: scale(0.1);
   transform-origin: 50% 50%;
-  transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.8s;
+  transition: transform 1.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.8s 0.2s;
 }
 .radar-blob.in {
   opacity: 1;
   transform: scale(1);
 }
 .radar-blob polygon {
-  filter: drop-shadow(0 0 14px var(--glow-a));
+  filter: drop-shadow(0 0 16px var(--glow-a));
 }
 .radar-dot {
   fill: var(--accent-3);
   stroke: var(--bg);
-  stroke-width: 2;
+  stroke-width: 2.2;
   opacity: 0;
   animation: dotIn 0.4s ease forwards;
 }
@@ -1198,6 +1224,12 @@ a {
   fill: var(--accent);
   font-size: 11px;
   font-family: 'SFMono-Regular', Consolas, Menlo, monospace;
+}
+.radar-legend {
+  margin-top: 8px;
+  font-size: 0.66rem;
+  letter-spacing: 0.3em;
+  color: var(--dim);
 }
 .tiles {
   display: grid;
@@ -1398,8 +1430,7 @@ a {
 
 @media (prefers-reduced-motion: reduce) {
   .grain,
-  .vignette,
-  .cinematic {
+  .vignette {
     display: none;
   }
   .bg-circuit,

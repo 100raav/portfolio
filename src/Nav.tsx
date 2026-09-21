@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { PROFILE } from './data'
-import { Logo } from './Preloader'
 import { ThemeToggle, type Theme } from './theme'
 
 const LINKS = [
@@ -26,7 +25,7 @@ export default function Nav({ theme, toggleTheme }: { theme: Theme; toggleTheme:
     <header className={`nav ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-inner">
         <a className="nav-brand" href="#home" onClick={() => setOpen(false)}>
-          <Logo size={36} />
+          <img className="nav-avatar" src="avatar.svg" alt="Saurav Bichha — profile photo" width={38} height={38} />
           <span className="nav-name">Saurav<span className="nav-dot">.</span>dev</span>
         </a>
         <button className="hamburger" aria-label="Menu" aria-expanded={open} onClick={() => setOpen((o) => !o)}>

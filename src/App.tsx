@@ -19,9 +19,9 @@ export default function App() {
   const [cinemaLeaving, setCinemaLeaving] = useState(false)
 
   useEffect(() => {
-    const t1 = setTimeout(() => setBooted(true), 1300)
-    const t2 = setTimeout(() => setCinema(true), 1500)
-    const t3 = setTimeout(() => setCinemaLeaving(true), 4200)
+    const t1 = setTimeout(() => setBooted(true), 1150)
+    const t2 = setTimeout(() => setCinema(true), 1350)
+    const t3 = setTimeout(() => setCinemaLeaving(true), 4300)
     return () => {
       clearTimeout(t1)
       clearTimeout(t2)
