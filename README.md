@@ -27,8 +27,13 @@ Nothing on the site is placeholder or sample data.
 
 ## Highlights
 
+- **Cinematic opening sequence** — a motion-picture style intro (letterbox bars, spotlight sweep,
+  film title card) that sets the scene before revealing the site, plus a film-grain overlay and
+  vignette across the whole experience.
 - **Futuristic, engineer-grade visuals** — animated particle network, circuit-board background,
   glowing grid, floating code glyphs, and a live developer terminal in the hero.
+- **Profile portrait** — a hand-built circular avatar with an animated gradient ring, placed
+  prominently in the hero, the About section and as the browser favicon.
 - **Animated profile summary** — key highlights typed out live in a terminal window.
 - **Tech Stack as an animated radar graph** — skills visualize as an interactive radar chart that
   grows into view, alongside technology logos.

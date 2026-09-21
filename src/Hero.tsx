@@ -38,6 +38,8 @@ export default function Hero() {
       <div className="hero-glow glow-a" />
       <div className="hero-glow glow-b" />
       <div className="hero-grid" />
+      <span className="hero-hairline hh-top" aria-hidden />
+      <span className="hero-hairline hh-bottom" aria-hidden />
       <span className="glyph g1">&lt;/&gt;</span>
       <span className="glyph g2">{'{ }'}</span>
       <span className="glyph g3">⚙</span>
@@ -47,6 +49,9 @@ export default function Hero() {
 
       <div className="hero-content">
         <div className="hero-left">
+          <div className="hero-avatar">
+            <img src="avatar.svg" alt="Saurav Bichha — profile photo" width={120} height={120} />
+          </div>
           <div className="hero-overline">
             <span className="overline-bar" />
             <span>ENGINEER · JAVA · SPRING BOOT · REACT</span>

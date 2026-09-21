@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { PROFILE } from './data'
 import { useTheme } from './theme'
 import { Preloader } from './Preloader'
+import Cinematic from './Cinematic'
 import Nav from './Nav'
 import Hero from './Hero'
 import About from './About'
@@ -14,15 +15,26 @@ import Contact from './Contact'
 export default function App() {
   const { theme, toggle } = useTheme()
   const [booted, setBooted] = useState(false)
+  const [cinema, setCinema] = useState(false)
+  const [cinemaLeaving, setCinemaLeaving] = useState(false)
 
   useEffect(() => {
-    const t = setInterval(() => setBooted(true), 1600)
-    return () => clearInterval(t)
+    const t1 = setTimeout(() => setBooted(true), 1300)
+    const t2 = setTimeout(() => setCinema(true), 1500)
+    const t3 = setTimeout(() => setCinemaLeaving(true), 4200)
+    return () => {
+      clearTimeout(t1)
+      clearTimeout(t2)
+      clearTimeout(t3)
+    }
   }, [])
 
   return (
     <>
       <Preloader done={booted} />
+      <Cinematic show={cinema} leaving={cinemaLeaving} />
+      <div className="grain" aria-hidden />
+      <div className="vignette" aria-hidden />
       <div className="bg-circuit" aria-hidden />
       <div className="bg-veil" aria-hidden />
       <Nav theme={theme} toggleTheme={toggle} />

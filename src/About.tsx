@@ -14,6 +14,7 @@ export default function About() {
       <div className="about-grid">
         <Reveal className="about-main">
           <div className="about-card">
+            <img className="about-avatar" src="avatar.svg" alt="Saurav Bichha — profile photo" width={64} height={64} />
             <span className="card-num">{'</>'}</span>
             <h3>Computer &amp; Systems Engineer</h3>
             <p>
