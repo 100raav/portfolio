@@ -554,7 +554,7 @@ a {
   z-index: 2;
   width: min(1120px, 92vw);
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
   gap: 56px;
   align-items: center;
 }
@@ -762,7 +762,7 @@ a {
   margin: 0 auto;
   padding: 48px 24px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 20px;
 }
 .focus-card {
@@ -798,7 +798,7 @@ a {
 /* ============ ABOUT ============ */
 .about-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
   gap: 32px;
   align-items: start;
 }
@@ -945,7 +945,7 @@ a {
 }
 .trow {
   display: grid;
-  grid-template-columns: 120px 44px 1fr;
+  grid-template-columns: 120px 44px minmax(0, 1fr);
   gap: 18px;
   padding: 18px 0;
   align-items: start;
@@ -1039,7 +1039,7 @@ a {
 /* ============ PROJECTS ============ */
 .repo-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
 }
 .repo-card {
@@ -1135,7 +1135,7 @@ a {
 /* ============ SKILLS ============ */
 .skills-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 32px;
   align-items: center;
 }
@@ -1257,7 +1257,7 @@ a {
 }
 .tiles {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
 }
 .tile {
@@ -1285,13 +1285,13 @@ a {
 /* ============ CONTACT ============ */
 .contact-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 32px;
   align-items: center;
 }
 .brand-wrap {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
 }
 .brand-link {
@@ -1372,6 +1372,7 @@ a {
 
 /* ============ REVEAL ============ */
 .reveal {
+  min-width: 0;
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 0.7s ease, transform 0.7s ease;
@@ -1379,6 +1380,13 @@ a {
 .reveal.in {
   opacity: 1;
   transform: none;
+}
+
+.repo-card,
+.focus-card,
+.tile,
+.brand-link {
+  min-width: 0;
 }
 
 /* ============ KEYFRAMES ============ */
@@ -1507,20 +1515,20 @@ a {
     justify-self: center;
   }
   .focus-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
   .repo-grid,
   .brand-wrap {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .tiles {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   .timeline::before {
     left: 105px;
   }
   .trow {
-    grid-template-columns: 60px 44px 1fr;
+    grid-template-columns: 60px 44px minmax(0, 1fr);
     gap: 12px;
   }
 }
@@ -1535,7 +1543,7 @@ a {
   .repo-grid,
   .brand-wrap,
   .tiles {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
   .hero-badges {
     gap: 8px;
@@ -1543,5 +1551,17 @@ a {
   .footer {
     justify-content: center;
     text-align: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .repo-grid,
+  .brand-wrap {
+    grid-template-columns: 1fr;
+  }
+  .repo-card,
+  .brand-link {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
