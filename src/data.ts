@@ -52,7 +52,7 @@ export const EDUCATION = [
   {
     years: '2015 – 2019',
     title: 'Secondary Education · SEE',
-    org: 'Model Multiple College',
+    org: 'Sinha Public School',
     meta: 'Grade X · Mathematics & Science',
     grade: '3.65 / 4.0',
   },
