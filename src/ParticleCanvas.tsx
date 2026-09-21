@@ -13,9 +13,17 @@ export default function ParticleCanvas() {
     let w = 0
     let h = 0
     let raf = 0
-    const COLORS = ['#22d3ee', '#a78bfa', '#f472b6']
-    type P = { x: number; y: number; vx: number; vy: number; r: number; c: string }
-    let parts: P[] = []
+    function accentColors(): string[] {
+      const cs = getComputedStyle(document.documentElement)
+      const pick = (v: string, f: string) => (v && v.trim() ? v.trim() : f)
+      return [
+        pick(cs.getPropertyValue('--accent'), '#22d3ee'),
+        pick(cs.getPropertyValue('--accent-2'), '#a78bfa'),
+        pick(cs.getPropertyValue('--accent-3'), '#f472b6'),
+      ]
+    }
+    let COLORS = accentColors()
+    let parts: { x: number; y: number; vx: number; vy: number; r: number; c: string }[] = []
 
     const resize = () => {
       w = canvas.width = canvas.offsetWidth
@@ -66,17 +74,24 @@ export default function ParticleCanvas() {
       raf = requestAnimationFrame(draw)
     }
 
-    if (reduce) {
-      resize()
-    } else {
-      resize()
-      draw()
+    resize()
+    if (!reduce) draw()
+
+    const onTheme = () => {
+      COLORS = accentColors()
+      const prev = parts
+      parts = prev.map((p) => ({ ...p, c: COLORS[Math.floor(Math.random() * COLORS.length)] }))
     }
+    const mo = new MutationObserver(onTheme)
+    mo.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] })
+
     const ro = new ResizeObserver(resize)
     ro.observe(canvas)
+
     return () => {
       cancelAnimationFrame(raf)
       ro.disconnect()
+      mo.disconnect()
     }
   }, [])
 

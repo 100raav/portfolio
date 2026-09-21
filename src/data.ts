@@ -4,11 +4,9 @@ export const PROFILE = {
   roles: [
     'Full-Stack Software Engineer',
     'Backend Engineer · Java · Spring Boot',
-    'Frontend Engineer · React · Node.js',
-    'Open-Source Builder',
+    'Frontend Engineer · React · TypeScript',
     'Peer Reviewer · Web of Science',
   ],
-  location: 'India · Remote-ready',
   email: '100raav73@gmail.com',
   github: 'https://github.com/100raav',
   linkedin: 'https://www.linkedin.com/in/saurav-bixa/',
@@ -20,11 +18,34 @@ export const PROFILE = {
 }
 
 export const HIGHLIGHTS = [
-  'Full-stack engineer — production-grade software end to end: CLI developer tools, REST & ERP backends, and responsive web applications.',
-  '28+ open-source repositories — every project built, tested, documented, and released in the open since 2023.',
-  '8 peer reviews — recorded on the Web of Science.',
-  'B.Tech · Computer Science & Engineering — Noida International University, Greater Noida.',
-  'Full-stack internships — The Skybrisk (Full Stack Java Developer), Labmentix (Full Stack Developer), and Oasis Infobyte (Web Development).',
+  'Production-grade software end to end — CLI developer tools, REST & ERP backends, and responsive web applications, each tested, documented and released.',
+  'Stack of choice — Java, Spring Boot, React, TypeScript, Node.js and SQL, applied across real engineering problems.',
+  'B.Tech · Computer Science & Engineering — Noida International University, 2022 – 2026.',
+  '8 peer reviews recorded on the Web of Science · Clarivate.',
+  'Industry experience — Full Stack Java Developer at The Skybrisk, Full Stack Developer at Labmentix, and Web Development at Oasis Infobyte.',
+]
+
+export const FOCUS = [
+  {
+    icon: '</>',
+    title: 'Backend Engineering',
+    text: 'Java · Spring Boot · REST & ERP systems — modular, secured and tested.',
+  },
+  {
+    icon: '{ }',
+    title: 'Frontend Engineering',
+    text: 'React · TypeScript — responsive, animated, accessible interfaces.',
+  },
+  {
+    icon: '⚙',
+    title: 'Tooling & Automation',
+    text: 'Git · CI pipelines · build systems — repeatable, verifiable workflows.',
+  },
+  {
+    icon: '✓',
+    title: 'Engineering Quality',
+    text: 'Testing, documentation, code review and the full software development lifecycle.',
+  },
 ]
 
 export const EDUCATION = [
@@ -58,7 +79,7 @@ export const EXPERIENCE = [
     org: 'The Skybrisk',
     meta: 'Full-stack program · hands-on project training under mentorship. SDLC · industry best practices.',
     chip: '7 MOS',
-    loc: 'Pune · Remote',
+    loc: 'Pune, India',
   },
   {
     years: 'Jul 2025 – Jan 2026',
@@ -66,7 +87,7 @@ export const EXPERIENCE = [
     org: 'Labmentix',
     meta: 'Java · Spring · HTML/CSS/JS · database operations & CRUD. End-to-end web apps in a structured team workflow.',
     chip: '7 MOS',
-    loc: 'Bengaluru · Remote',
+    loc: 'Bengaluru, India',
   },
   {
     years: 'Jul 2023 – Aug 2023',
@@ -90,52 +111,50 @@ export const FEATURED = [
   {
     name: 'codemeetly-backend',
     desc: 'API for the CodeMeetly collaboration platform — active development.',
-    lang: 'API',
+    chips: ['Spring Boot', 'REST', 'Java'],
     color: '#f472b6',
   },
   {
     name: 'Blockchain-SImulation-Project',
-    desc: 'Spring Boot REST ledger — blocks, hashing, Swagger docs.',
-    lang: 'Java',
+    desc: 'Spring Boot REST ledger — blocks, hashing, Swagger-documented.',
+    chips: ['Spring Boot', 'Hashing', 'Swagger'],
     color: '#e76f00',
   },
   {
     name: 'erp-system',
-    desc: 'Spring Boot ERP — modules, roles, clean REST backend.',
-    lang: 'Java',
+    desc: 'Spring Boot ERP — modular architecture, roles, clean REST backend.',
+    chips: ['Spring Boot', 'ERP', 'Security'],
     color: '#e76f00',
   },
   {
     name: 'project-xray',
-    desc: 'Java/Spring repository intelligence — architecture graph.',
-    lang: 'HTML',
+    desc: 'Java/Spring repository intelligence — architecture visualisation.',
+    chips: ['Java', 'Analysis', 'Diagrams'],
     color: '#22d3ee',
   },
   {
     name: 'chronovault',
     desc: 'Verified checkpoint CLI — automatic rollback built in.',
-    lang: 'Java',
+    chips: ['Java', 'CLI', 'Automation'],
     color: '#e76f00',
   },
   {
     name: 'compeng-calc',
-    desc: 'Engineering calculator — Basic · Programmer · Network.',
-    lang: 'JavaScript',
+    desc: 'Engineering calculator — Basic · Programmer · Network modes.',
+    chips: ['JavaScript', 'UI', 'Tools'],
     color: '#f7df1e',
   },
 ]
 
-export const SKILLS = [
+export const RADAR = [
   { name: 'Java', pct: 95 },
   { name: 'Spring Boot', pct: 92 },
   { name: 'React', pct: 88 },
   { name: 'TypeScript', pct: 84 },
   { name: 'Node.js', pct: 82 },
-  { name: 'JavaScript', pct: 90 },
-  { name: 'SQL / MySQL', pct: 85 },
-  { name: 'HTML5 & CSS3', pct: 92 },
-  { name: 'REST APIs', pct: 90 },
-  { name: 'Git & GitHub', pct: 93 },
+  { name: 'SQL & Data', pct: 86 },
+  { name: 'REST & APIs', pct: 90 },
+  { name: 'Git & CI', pct: 90 },
 ]
 
 export const TECH_TILES = [
@@ -154,10 +173,10 @@ export const TECH_TILES = [
 ] as const
 
 export const SOCIALS = [
-  { label: 'GitHub', url: PROFILE.github, icon: 'github' },
-  { label: 'LinkedIn', url: PROFILE.linkedin, icon: 'linkedin' },
-  { label: 'LeetCode', url: PROFILE.leetcode, icon: 'leetcode' },
-  { label: 'GeeksforGeeks', url: PROFILE.gfg, icon: 'gfg' },
-  { label: 'Web of Science', url: PROFILE.wos, icon: 'wos' },
-  { label: 'ORCID', url: PROFILE.orcid, icon: 'orcid' },
+  { label: 'GitHub', url: PROFILE.github, id: 'github' },
+  { label: 'LinkedIn', url: PROFILE.linkedin, id: 'linkedin' },
+  { label: 'LeetCode', url: PROFILE.leetcode, id: 'leetcode' },
+  { label: 'GeeksforGeeks', url: PROFILE.gfg, id: 'gfg' },
+  { label: 'Web of Science', url: PROFILE.wos, id: 'wos' },
+  { label: 'ORCID', url: PROFILE.orcid, id: 'orcid' },
 ]

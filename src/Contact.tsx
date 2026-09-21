@@ -1,14 +1,6 @@
 import { PROFILE, SOCIALS } from './data'
+import { BrandIcon } from './brands'
 import Reveal from './Reveal'
-
-const GLYPH: Record<string, string> = {
-  github: 'GH',
-  linkedin: 'in',
-  leetcode: 'LC',
-  gfg: 'GfG',
-  wos: 'WoS',
-  orcid: 'or',
-}
 
 export default function Contact() {
   return (
@@ -19,18 +11,17 @@ export default function Contact() {
           <h2>
             Let's Build <span className="grad">Together</span>
           </h2>
-          <p className="sec-sub">Open to full-time roles, internships, freelance and open-source collaborations. I reply fast.</p>
+          <p className="sec-sub">Open to full-time roles, internships, freelance and open-source collaborations. Reach out — I reply fast.</p>
         </div>
       </Reveal>
 
       <div className="contact-grid">
         <Reveal>
-          <div className="contact-cards">
+          <div className="brand-wrap">
             {SOCIALS.map((s, i) => (
-              <a key={s.label} className="contact-card" href={s.url} target="_blank" rel="noreferrer" style={{ animationDelay: `${i * 60}ms` }}>
-                <span className="contact-glyph">{GLYPH[s.icon] || '→'}</span>
-                <span className="contact-label">{s.label}</span>
-                <span className="contact-arrow">↗</span>
+              <a key={s.id} className={`brand-link ${s.id}`} href={s.url} target="_blank" rel="noreferrer" style={{ animationDelay: `${i * 70}ms` }}>
+                <BrandIcon id={s.id} size={34} />
+                <span>{s.label}</span>
               </a>
             ))}
           </div>
@@ -38,14 +29,14 @@ export default function Contact() {
 
         <Reveal delay={120}>
           <div className="contact-cta">
-            <h3>Hire me on email</h3>
-            <p>{PROFILE.email}</p>
+            <h3>Hire me</h3>
+            <a className="mail" href={`mailto:${PROFILE.email}?subject=Let's%20build%20together`}>{PROFILE.email}</a>
+            <p className="contact-note">
+              Full-Stack Software Engineer · Java · Spring Boot · React · TypeScript · Node.js. Based in India.
+            </p>
             <a className="btn btn-primary" href={`mailto:${PROFILE.email}?subject=Let's%20build%20together`}>
               <span>Email Me</span>
             </a>
-            <p className="contact-note">
-              Full-stack engineer · Java · Spring Boot · React · Node.js. Remote-friendly, based in India.
-            </p>
           </div>
         </Reveal>
       </div>

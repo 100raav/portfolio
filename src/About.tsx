@@ -1,5 +1,6 @@
 import { HIGHLIGHTS } from './data'
 import Reveal from './Reveal'
+import Typewriter from './Typewriter'
 
 export default function About() {
   return (
@@ -11,39 +12,45 @@ export default function About() {
         </div>
       </Reveal>
       <div className="about-grid">
-        <Reveal delay={100} className="about-card">
-          <span className="card-num">SB</span>
-          <h3>Computer &amp; Systems Engineer</h3>
-          <p>
-            I design and ship production-grade software across the full stack: CLI developer tools,
-            REST &amp; ERP backends, and responsive web applications — with strong foundations in data
-            structures, algorithms and the software development lifecycle. Open for full-time roles,
-            internships and collaborations.
-          </p>
-          <ul className="about-highlights">
-            {HIGHLIGHTS.map((h) => (
-              <li key={h}>{h}</li>
-            ))}
-          </ul>
+        <Reveal className="about-main">
+          <div className="about-card">
+            <span className="card-num">{'</>'}</span>
+            <h3>Computer &amp; Systems Engineer</h3>
+            <p>
+              I design and ship production-grade software across the full stack — CLI developer tools,
+              REST &amp; ERP backends, and responsive web applications — with strong foundations in data
+              structures, algorithms and the software development lifecycle. Continually building,
+              reviewing and releasing in the open.
+            </p>
+          </div>
+          <div className="summary-term">
+            <div className="summary-head">
+              <span className="summary-dot" />
+              <span>$ summary — saurav.bichha</span>
+            </div>
+            <p className="summary-out">
+              <span className="summary-prompt">› </span>
+              <Typewriter words={HIGHLIGHTS} />
+            </p>
+            <div className="summary-scan" />
+          </div>
         </Reveal>
         <div className="about-side">
-          <Reveal delay={180}>
-            <div className="mini-stat">
-              <span className="mini-num grad">28+</span>
-              <span>public repos · all real, all verifiable</span>
-            </div>
-          </Reveal>
-          <Reveal delay={240}>
-            <div className="mini-stat">
-              <span className="mini-num grad">8</span>
-              <span>peer reviews on Web of Science</span>
-            </div>
-          </Reveal>
-          <Reveal delay={300}>
-            <div className="mini-stat">
-              <span className="mini-num grad">3+</span>
-              <span>years building in the open since 2023</span>
-            </div>
+          {[
+            ['ROLE', 'Full-Stack Software Engineer'],
+            ['DEGREE', 'B.Tech · CSE · Noida Int. Univ.'],
+            ['REVIEWING', 'Web of Science · Clarivate'],
+            ['BUILDING', 'In the open — since 2023'],
+          ].map(([k, v], i) => (
+            <Reveal key={k} delay={i * 90}>
+              <div className="fact">
+                <span className="fact-key">{k}</span>
+                <span className="fact-val">{v}</span>
+              </div>
+            </Reveal>
+          ))}
+          <Reveal delay={380}>
+            <a className="btn btn-ghost full" href="#contact"><span>Work With Me →</span></a>
           </Reveal>
         </div>
       </div>

@@ -1,16 +1,18 @@
 import { useEffect, useState } from 'react'
 import { PROFILE } from './data'
+import { useTheme } from './theme'
 import { Preloader } from './Preloader'
 import Nav from './Nav'
 import Hero from './Hero'
 import About from './About'
-import Stats from './Stats'
+import Focus from './Focus'
 import Experience from './Experience'
 import Projects from './Projects'
 import Skills from './Skills'
 import Contact from './Contact'
 
 export default function App() {
+  const { theme, toggle } = useTheme()
   const [booted, setBooted] = useState(false)
 
   useEffect(() => {
@@ -21,11 +23,13 @@ export default function App() {
   return (
     <>
       <Preloader done={booted} />
-      <Nav />
+      <div className="bg-circuit" aria-hidden />
+      <div className="bg-veil" aria-hidden />
+      <Nav theme={theme} toggleTheme={toggle} />
       <main>
         <Hero />
         <About />
-        <Stats />
+        <Focus />
         <Experience />
         <Projects />
         <Skills />
@@ -33,7 +37,7 @@ export default function App() {
       </main>
       <footer className="footer">
         <span>
-          © {new Date().getFullYear()} <b>Saurav Bichha</b> · Design + code, built to production standard
+          © {new Date().getFullYear()} <b>Saurav Bichha</b> · Full-Stack Software Engineer
         </span>
         <a href={PROFILE.github} target="_blank" rel="noreferrer">
           github.com/{PROFILE.username}

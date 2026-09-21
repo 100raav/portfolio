@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { PROFILE } from './data'
 import { Logo } from './Preloader'
+import { ThemeToggle, type Theme } from './theme'
 
 const LINKS = [
   ['about', 'About'],
@@ -10,7 +11,7 @@ const LINKS = [
   ['contact', 'Contact'],
 ] as const
 
-export default function Nav() {
+export default function Nav({ theme, toggleTheme }: { theme: Theme; toggleTheme: () => void }) {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
 
@@ -37,6 +38,7 @@ export default function Nav() {
               {label}
             </a>
           ))}
+          <ThemeToggle theme={theme} toggle={toggleTheme} />
           <a className="nav-cta" href={`mailto:${PROFILE.email}`}>Hire Me</a>
         </nav>
       </div>
