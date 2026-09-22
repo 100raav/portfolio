@@ -32,7 +32,7 @@ export default function Contact() {
             <h3>Hire me</h3>
             <a className="mail" href={`mailto:${PROFILE.email}?subject=Let's%20build%20together`}>{PROFILE.email}</a>
             <p className="contact-note">
-              Full-Stack Software Engineer · Java · Spring Boot · React · TypeScript · Node.js. Based in India.
+              Full-Stack Software Engineer · Java · Spring Boot · React · TypeScript · Node.js. Based in Pigauna, Jaleshwor-11, Mahottari, Nepal.
             </p>
             <a className="btn btn-primary" href={`mailto:${PROFILE.email}?subject=Let's%20build%20together`}>
               <span>Email Me</span>
